@@ -11,10 +11,10 @@ import android.widget.Button;
 public class SecondActivity extends Activity implements OnClickListener {
 	
 	private static final String LOG_TAG = "SecondActivity";
-	public final int CHOOSED_RED = 1;
-	public final int CHOOSED_GREEN = 2;
-	public final int CHOOSED_BLUE = 3;
-	public final int CHOOSED_YELLOW = 4;
+	public static final int CHOOSED_RED = 1;
+	public static final int CHOOSED_GREEN = 2;
+	public static final int CHOOSED_BLUE = 3;
+	public static final int CHOOSED_YELLOW = 4;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -52,9 +52,9 @@ public class SecondActivity extends Activity implements OnClickListener {
 	}
 
 	private void startColorPreviewActivity(int color) {
-		/*Intent intentPreviewActivity = new Intent(SecondActivity.this, PreviewActivity.class);
+		Intent intentPreviewActivity = new Intent(SecondActivity.this, ColorPreviewActivity.class);
 		intentPreviewActivity.putExtra("color", color);
-		startActivity(intentPreviewActivity);*/
+		startActivity(intentPreviewActivity);
 		Log.d(LOG_TAG, "Pressed one of the buttons");
 	}
 	

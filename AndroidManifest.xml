@@ -26,6 +26,10 @@
             android:name=".SecondActivity"
             android:label="@string/second_activity" >
         </activity>
+        <activity
+            android:name=".ColorPreviewActivity"
+            android:label="@string/title_activity_color_preview" >
+        </activity>
     </application>
 
 </manifest>
