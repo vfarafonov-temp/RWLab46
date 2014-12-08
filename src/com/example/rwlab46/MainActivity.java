@@ -1,6 +1,7 @@
 package com.example.rwlab46;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -26,6 +27,8 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Log.d(LOG_TAG, "Button pressed");
+				Intent intentSecondActivity = new Intent(MainActivity.this, SecondActivity.class);
+				startActivity(intentSecondActivity);
 			}
 		});
     }
