@@ -1,16 +1,23 @@
+/**
+ * Copyright (C) 2014 Rus Wizards 
+ */
+
 package com.example.rwlab46;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
+/**
+ * Class for activity where user can choose color
+ * @author vfarafonov
+ *
+ */
 public class SecondActivity extends Activity implements OnClickListener {
 	
-	private static final String LOG_TAG = "SecondActivity";
 	public static final int CHOOSED_RED = 1;
 	public static final int CHOOSED_GREEN = 2;
 	public static final int CHOOSED_BLUE = 3;
@@ -18,19 +25,25 @@ public class SecondActivity extends Activity implements OnClickListener {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_second);
+		
 		Button mBtnRed = (Button)findViewById(R.id.buttonColorRed);
 		mBtnRed.setOnClickListener(this);
+		
 		Button mBtnGreen = (Button)findViewById(R.id.buttonColorGreen);
 		mBtnGreen.setOnClickListener(this);
+		
 		Button mBtnBlue = (Button)findViewById(R.id.buttonColorBlue);
 		mBtnBlue.setOnClickListener(this);
+		
 		Button mBtnYellow = (Button)findViewById(R.id.buttonColorYellow);
 		mBtnYellow.setOnClickListener(this);
 	}
 
+	/**
+	 * Calls startColorPreviewActivity(int color) method to launch new activity depends on button that was pressed
+	 */
 	@Override
 	public void onClick(View v) {
 		switch (v.getId()) {
@@ -51,11 +64,16 @@ public class SecondActivity extends Activity implements OnClickListener {
 		}
 	}
 
+	/**
+	 * Starts activity with color preview. Puts in intents' extra color code.
+	 * @param color The color number
+	 */
 	private void startColorPreviewActivity(int color) {
-		Intent intentPreviewActivity = new Intent(SecondActivity.this, ColorPreviewActivity.class);
-		intentPreviewActivity.putExtra("color", color);
-		startActivity(intentPreviewActivity);
-		Log.d(LOG_TAG, "Pressed one of the buttons");
+		
+		Intent mIntentPreviewActivity = new Intent(SecondActivity.this, ColorPreviewActivity.class);
+		mIntentPreviewActivity.putExtra("color", color);
+		
+		startActivity(mIntentPreviewActivity);
 	}
 	
 }
