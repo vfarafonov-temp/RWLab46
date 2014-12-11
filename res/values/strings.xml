@@ -4,7 +4,7 @@
     <string name="app_name">RWLab46</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="second_activity">2nd Activity</string>
+    <string name="title_activity_color_selection">2nd Activity</string>
     <string name="title_activity_color_preview">Preview</string>
 
 </resources>

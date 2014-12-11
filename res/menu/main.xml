@@ -1,6 +1,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.rwlab46.MainActivity" >
+    tools:context="com.ruswizards.rwlab46.MainActivity" >
 
     <item
         android:id="@+id/action_settings"

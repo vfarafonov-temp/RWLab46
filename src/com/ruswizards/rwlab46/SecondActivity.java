@@ -2,7 +2,8 @@
  * Copyright (C) 2014 Rus Wizards 
  */
 
-package com.example.rwlab46;
+package com.ruswizards.rwlab46;
+
 
 import android.app.Activity;
 import android.content.Intent;
