@@ -9,11 +9,11 @@
     tools:context="com.ruswizards.rwlab46.MainActivity" >
 
     <Button
-        android:id="@+id/buttonChangeColor"
+        android:id="@+id/button_change_color"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:text="Change color" />
+        android:text="@string/button_change_color" />
 
 </RelativeLayout>

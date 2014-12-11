@@ -9,31 +9,35 @@
     android:gravity="center_vertical" >
 
     <Button
-        android:id="@+id/buttonColorRed"
+        android:id="@+id/button_color_red"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Red"
-        android:layout_below="@+id/buttonColorGreen" />
+        android:text="@string/button_red"
+        android:layout_below="@+id/button_color_green"
+        android:onClick="onClick" />
 	<Button
-        android:id="@+id/buttonColorGreen"
+        android:id="@+id/button_color_green"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Green" 
-        android:layout_below="@+id/buttonColorBlue"/>
+        android:text="@string/button_green" 
+        android:layout_below="@+id/button_color_blue"
+        android:onClick="onClick" />
     <Button
-        android:id="@+id/buttonColorBlue"
+        android:id="@+id/button_color_blue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Blue"
-        android:layout_below="@+id/buttonColorYellow" />
+        android:text="@string/button_blue"
+        android:layout_below="@+id/button_color_yellow"
+        android:onClick="onClick" />
 	<Button
-        android:id="@+id/buttonColorYellow"
+        android:id="@+id/button_color_yellow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Yellow" />
+        android:text="@string/button_yellow"
+        android:onClick="onClick" />
 	
 </RelativeLayout>
