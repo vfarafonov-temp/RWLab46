@@ -1,6 +1,10 @@
 /**
- * Copyright (C) 2014 Rus Wizards 
+ * Copyright (C) 2014 Rus Wizards
+ * 
+ * Created: 11.12.2014
+ * Vladimir Farafonov
  */
+
 package com.ruswizards.rwlab46;
 
 /**
