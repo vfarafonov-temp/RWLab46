@@ -15,21 +15,59 @@ import android.view.View.OnClickListener;
 
 /**
  * Class for activity where user can choose color
- * 
- * @author vfarafonov
- * 
  */
 public class ColorSelectingActivity extends Activity implements OnClickListener {
 
 	/**
+	 * Enum for color codes
+	 */
+	public enum SelectedColor {
+		RED(1), GREEN(2), BLUE(3), YELLOW(4);
+
+		private final int id_;
+
+		/**
+		 * Returns colors' resource id from picked up color number.
+		 * @param id SelectedColor id
+		 * @return color resource id
+		 */
+		public static int getColor(final int id) {
+			if (id == SelectedColor.BLUE.getId()) {
+				return R.color.blue;
+			} else if (id == SelectedColor.GREEN.getId()) {
+				return R.color.green;
+			} else if (id == SelectedColor.YELLOW.getId()) {
+				return R.color.yellow;
+			} else if (id == SelectedColor.RED.getId()) {
+				return R.color.red;
+			} else {
+				throw new IllegalArgumentException("Color not identified");
+			}
+		}
+		
+		SelectedColor(int id) {
+			this.id_ = id;
+		}
+
+		/**
+		 * Returns id for enum
+		 * 
+		 * @return The color code
+		 */
+		public int getId() {
+			return id_;
+		}
+	}
+	
+	/**
 	 * Constant key name used when passing intent to open preview activity
 	 */
-	public static final String TAG_COLOR = "color";
+	public static final String INTENT_COLOR = "color";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_second);
+		setContentView(R.layout.activity_color_selecting);
 	}
 
 	/**
@@ -65,9 +103,8 @@ public class ColorSelectingActivity extends Activity implements OnClickListener 
 	private void startColorPreviewActivity(SelectedColor selectedColor) {
 		Intent intentPreviewActivity = new Intent(this,
 				ColorPreviewActivity.class);
-		intentPreviewActivity.putExtra(TAG_COLOR, selectedColor.getCode());
+		intentPreviewActivity.putExtra(INTENT_COLOR, selectedColor.getId());
 
 		startActivity(intentPreviewActivity);
 	}
-
 }

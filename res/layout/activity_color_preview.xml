@@ -14,13 +14,15 @@
         android:id="@+id/button_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_back"/>
+        android:text="@string/button_back"
+        android:onClick="onClick" />
     <Button 
         android:id="@+id/button_home"
         android:layout_toRightOf="@+id/button_back"
         android:layout_toEndOf="@+id/button_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_home"/>
+        android:text="@string/button_home"
+        android:onClick="onClick" />
     
 </RelativeLayout>

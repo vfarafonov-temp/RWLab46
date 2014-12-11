@@ -7,6 +7,8 @@
 
 package com.ruswizards.rwlab46;
 
+import com.ruswizards.rwlab46.ColorSelectingActivity.SelectedColor;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,13 +20,10 @@ import android.widget.Toast;
 
 /**
  * Activity with picked up color preview
- * 
- * @author vfarafonov
- * 
  */
 public class ColorPreviewActivity extends Activity implements OnClickListener {
 
-	int backButtonPressesCount = 0;
+	private int backButtonPressesCount = 0;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,37 +31,12 @@ public class ColorPreviewActivity extends Activity implements OnClickListener {
 		setContentView(R.layout.activity_color_preview);
 
 		// Get color resource id
-		int colorResource = getColorResource(getIntent().getIntExtra(
-				ColorSelectingActivity.TAG_COLOR, SelectedColor.RED.getCode()));
+		int colorResource = SelectedColor.getColor(getIntent().getIntExtra(
+				ColorSelectingActivity.INTENT_COLOR, 0));
 
 		// Set background color
 		RelativeLayout rootLayout = (RelativeLayout) findViewById(R.id.root_layout);
 		rootLayout.setBackgroundColor(getResources().getColor(colorResource));
-
-		Button buttonBack = (Button) findViewById(R.id.button_back);
-		buttonBack.setOnClickListener(this);
-
-		Button buttonHome = (Button) findViewById(R.id.button_home);
-		buttonHome.setOnClickListener(this);
-	}
-
-	/**
-	 * Returns colors' resource id from picked up color number.
-	 * 
-	 * @param color
-	 *            The color number
-	 * @return resource id
-	 */
-	private int getColorResource(int color) {
-		if (color == SelectedColor.BLUE.getCode()) {
-			return R.color.blue;
-		} else if (color == SelectedColor.GREEN.getCode()) {
-			return R.color.green;
-		} else if (color == SelectedColor.YELLOW.getCode()) {
-			return R.color.yellow;
-		} else {
-			return R.color.red;
-		}
 	}
 
 	@Override
@@ -72,7 +46,6 @@ public class ColorPreviewActivity extends Activity implements OnClickListener {
 			// Closes activity after back button pressed (similar to pressing on
 			// devices' back button)
 			onBackPressed();
-			// finish();
 			break;
 		case R.id.button_home:
 			// Starts home activity with clearing top activities in task

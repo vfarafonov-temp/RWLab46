@@ -17,9 +17,6 @@ import android.widget.Button;
 /**
  * Class for the main activity. Activity has just one button to open second
  * activity
- * 
- * @author vfarafonov
- * 
  */
 public class MainActivity extends Activity {
 
