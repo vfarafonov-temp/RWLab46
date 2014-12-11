@@ -30,13 +30,18 @@ public class ColorPreviewActivity extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_color_preview);
 
-		// Get color resource id
-		int colorResource = SelectedColor.getColor(getIntent().getIntExtra(
-				ColorSelectingActivity.INTENT_COLOR, 0));
-
 		// Set background color
-		RelativeLayout rootLayout = (RelativeLayout) findViewById(R.id.root_layout);
-		rootLayout.setBackgroundColor(getResources().getColor(colorResource));
+		try {
+			int colorResource = SelectedColor.getColor(getIntent().getIntExtra(
+					ColorSelectingActivity.INTENT_COLOR, 0));
+			
+			// Set background color
+			RelativeLayout rootLayout = (RelativeLayout) findViewById(R.id.root_layout);
+			rootLayout.setBackgroundColor(getResources().getColor(colorResource));
+			
+		} catch (IllegalArgumentException e) {
+			Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
+		}
 	}
 
 	@Override

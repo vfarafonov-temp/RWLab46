@@ -38,6 +38,14 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="@string/button_yellow"
+        android:layout_below="@+id/button_color_wrong"
+        android:onClick="onClick" />
+	<Button
+        android:id="@+id/button_color_wrong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/button_wrong_color"
         android:onClick="onClick" />
 	
 </RelativeLayout>

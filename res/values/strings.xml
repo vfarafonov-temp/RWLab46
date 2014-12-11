@@ -12,5 +12,6 @@
     <string name="button_green">Green</string>
     <string name="button_blue">Blue</string>
     <string name="button_yellow">Yellow</string>
+    <string name="button_wrong_color">Get exception</string>
 
 </resources>

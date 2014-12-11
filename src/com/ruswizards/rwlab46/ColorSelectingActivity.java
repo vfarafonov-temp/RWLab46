@@ -30,8 +30,9 @@ public class ColorSelectingActivity extends Activity implements OnClickListener 
 		 * Returns colors' resource id from picked up color number.
 		 * @param id SelectedColor id
 		 * @return color resource id
+		 * @throws IllegalArgumentException 
 		 */
-		public static int getColor(final int id) {
+		public static int getColor(final int id) throws IllegalArgumentException {
 			if (id == SelectedColor.BLUE.getId()) {
 				return R.color.blue;
 			} else if (id == SelectedColor.GREEN.getId()) {
@@ -88,6 +89,12 @@ public class ColorSelectingActivity extends Activity implements OnClickListener 
 			break;
 		case R.id.button_color_yellow:
 			startColorPreviewActivity(SelectedColor.YELLOW);
+			break;
+		case R.id.button_color_wrong:
+			Intent intentPreviewActivity = new Intent(this,
+					ColorPreviewActivity.class);
+			intentPreviewActivity.putExtra(INTENT_COLOR, 0);
+			startActivity(intentPreviewActivity);
 			break;
 		default:
 			break;
